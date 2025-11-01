@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+import seaborn as snp
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+
+
+
+
+
+df=pd.read_csv("sap500.csv")
+df
+
+filtered_df=df[(df['Date']>= '2015-01-01')& (df['Date']<='2025-10-29')]
+filtered_df = filtered_df.copy()
+filtered_df['Date']=pd.to_datetime(filtered_df['Date'])
+
+filtered_df = filtered_df.set_index('Date')
+filtered_df=filtered_df.resample('W-FRI').last().reset_index()
+X=filtered_df[['Open','High','Low','Volume']]
+y=filtered_df['Close']
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
+
+
+
+rf=RandomForestRegressor(n_estimators=100,random_state=42)
+rf.fit(X_train,y_train)
+rfclose_prediction=rf.predict(X_test)
+mse_rf=mean_squared_error(y_test,rfclose_prediction)
+
+mse_rf

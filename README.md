@@ -11,10 +11,3 @@ Cleaned and filtered S&P 500 data.
 Split dataset into training and testing sets using an 80-20 ratio.
 Key Takeaways
 Simpler models can outperform complex ones when data is limited.
-Model selection should depend on both data quality and quantity, not just algorithm complexity.
-Increasing the dataset size or performing hyperparameter tuning on Random Forest could potentially improve its performance.
-Technologies Used
-Python
-Pandas, NumPy for data manipulation
-Scikit-learn for model implementation and evaluation
-

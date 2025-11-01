@@ -4,6 +4,7 @@ This project focuses on predicting the S&amp;P 500 index values using historical
 A simple yet effective baseline model that assumes a linear relationship between features and the target variable.
 2. Random Forest Regressor
 An ensemble model based on decision trees, designed to capture complex, non-linear relationships in data.
+
 ⚙️ Workflow
 Data Preprocessing
 Cleaned and filtered S&P 500 data.

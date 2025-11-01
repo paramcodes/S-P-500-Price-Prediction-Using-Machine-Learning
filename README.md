@@ -8,9 +8,3 @@ An ensemble model based on decision trees, designed to capture complex, non-line
 Data Preprocessing
 Cleaned and filtered S&P 500 data.
 Split dataset into training and testing sets using an 80-20 ratio.
-Feature Engineering
-Created relevant input features (e.g., moving averages, returns, etc.).
-Model Training
-Trained both models on the same training dataset.
-Evaluation Metric
-Used Mean Squared Error (MSE) to measure prediction accuracy.
